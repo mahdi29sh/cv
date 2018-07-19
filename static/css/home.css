@@ -1,0 +1,149 @@
+
+
+
+body{
+	background-color:#E5E5E5;
+  font-family: 'Raleway', sans-serif;
+  direction:rtl;text-align:right;
+}
+.main-section{
+	width: 50%;
+	margin: 0 auto;
+}
+.content{
+	padding:20px;
+	background-color: #fff;
+}
+.user-img{
+	width:10%;
+	float: right;;
+	margin-left: 20px;
+}
+.user-img img{
+	width:100%;
+	height:100%;
+	border-radius: 50%;
+	margin-top:-10px;
+}
+.messenger-bulle p{
+  background: #3375da;
+  text-shadow: 0 0 2px rgba(0, 0, 0, .3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-bottom: 7px;
+  padding-top: 4px;
+  padding-right: 7px;
+  color: #fff;
+  font-size: .8em;
+  display: inline-block;
+  margin: 0px 5px;
+  max-width: 100%;
+  position: relative;
+  word-wrap: break-word;
+}
+.user-detail p{
+  direction:rtl;
+  text-align:right;
+	font-size:17px;
+	font-weight:600;
+	letter-spacing:1.5px;
+	margin:15px 0px 10px 0px; 
+}
+.user-detail span{
+	color:#a2a2a2;
+}
+.comment-content{
+  direction:rtl;text-align:right;
+	margin-top:10px;
+}
+.comment-box{
+	margin-top:30px;
+}
+.count-btn,.enter-btn{
+	float:left;
+}
+.btn{
+	background-color: #fff;
+	border:none;
+	border:1px solid #c2c2c2;
+	padding:10px 12px;
+	border-radius:3px;
+	margin-right: 10px;
+}
+.btn:hover{
+	border:1px solid #000;
+}
+.comment-btn{
+	margin-top: 30px;
+}
+.comment-btn input{
+	width:80%;
+	padding:10px;
+}
+.add-comment{
+	padding: 20px;
+	background-color:#F5F5F5;
+	border-top:1px solid #d2d2d2;
+	display: none;
+}
+.add-comment-img{
+	width:10%;
+}
+.box .add-comment-img img{
+	margin-right:10px;
+	width:100%;
+	float:left;
+	height: 100%;
+	border-radius: 50%; 	
+}
+.add-comment-text textarea{
+	width:80%;
+	font-family: 'Barlow Condensed', sans-serif;
+	padding:10px;
+	font-size:20px;
+}
+.post-comment-btn{
+	background-color: #5CB85C;
+	padding:8px;
+	border:none;
+	color:#fff;
+	border-radius:3px;
+	margin:10px 5px 0px 75px;
+}
+.cancel-btn{
+	background-color: #fff;
+	padding:8px;
+	border:none;
+	border:1px solid #d2d2d2;
+	border-radius:3px;
+}
+.cancel-btn:hover{
+	border:1px solid #000;
+	cursor:pointer;
+}
+.example img{
+  direction:rtl;
+  text-align:right;
+	border-radius: 50%;
+	margin-top:20px;
+	width: 60px;
+}
+.comment-img img{
+	float: right;
+	margin-right:20px;
+}
+.comment p{
+	margin-top:30px;
+	display: inline-block;
+}
+
+.sub-comment .comment-img{
+	float: left;
+	width: 20%;
+}
+
+.sub-comment .comment{
+	float: left;
+	width: 80%;
+}

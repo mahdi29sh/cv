@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+<html>
+<head>
+        
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/home.css')}}">
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+</head>
+<body>
+	<div style ="direction:rtl;text-align:right;"class="main-section">
+		<div class="content">
+			{% for  item in cv%}
+			<div class="top-section">
+					
+				<div class="user-detail">
+					
+                    <div class= "messenger-bulle">
+					<img src="{{url_for('static' , filename ='uploads/'+item.img)}}" class="img-circle" alt="Cinque Terre" width="150">
+					<p >{{item.user.username}}</p>
+					
+                </div>
+            </div>
+				<div style="clear:both;"></div>			
+			</div>
+			<div class="comment-content">
+			
+			{{item.content}}
+			<button type="button" class="btn btn-primary" ><a href="{{url_for('detail' , id = item.cvid)}}">بیشتر</a>></button>
+			</div>
+			{%endfor%}
+			<div style ="direction:rtl;text-align:right;"class="sub-comment"></div>
+			
+			
+		</div>
+		
+    </div>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</body>
+</html>
+{% endblock %}

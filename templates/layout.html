@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>مرجع رزومه ها</title>
+
+        <!-- CSS -->        
+  
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css')}}">
+
+
+
+    </head>
+
+    <body>
+		
+		<!-- Top menu -->
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+				{% if not session['logged_in']  %}
+					<a class="navbar-brand" href="/">مرجع رزومه ها</a>
+					<a class="navbar-brand" href="/login"> ورود</a>
+					<a class="navbar-brand" href="/register"> ثبت نام</a>
+				{%endif%}
+				{%if session['logged_in']%}
+				
+				<div class="dropdown">
+					<a class="navbar-brand" href="/">مرجع رزومه ها</a>
+					<button class="btn  dropdown-toggle" type="button" data-toggle="dropdown">{{ session['username']}}
+					<span class="caret"></span></button>
+					<ul class="dropdown-menu">
+					  <li><a href="changepass">تغییر رمز </a></li>
+					  <li><a href="/logout">خروج</a></li>
+
+					</ul>
+				  </div>
+				
+				{%endif%}
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="top-navbar-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">درباره ما</a></li>
+						{% if session['logged_in'] and session['access'] == 1 %}
+						<li><a href="addcv">اضافه کردن رزومه</a></li>
+						
+						{% endif %}
+
+                        <li><a href="/">صفحه اصلی</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+				
+        <!-- Top content -->
+        
+        {% block content %}{% endblock %}
+    
+
+
+        <!-- Javascript -->
+        <script src="{{ url_for('static',filename='js/jquery-1.11.1.min.js')}}"></script>
+        <script src="{{ url_for('static' ,filename='js/bootstrap.min.js')}}"></script>
+ 
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+        
+    </body>
+
+</html>

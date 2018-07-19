@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block content %}
+<html>
+<head>
+        
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/home.css')}}">
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+</head>
+<body>
+	<div style ="direction:rtl;text-align:right;"class="main-section">
+		<div class="content">
+			
+			<div class="top-section">
+					
+				<div class="user-detail">
+					
+                    <div class= "messenger-bulle">
+					<img src="{{url_for('static' , filename ='uploads/'+cv.img)}}" class="img-circle" alt="Cinque Terre" width="150">
+					{{cv.user.username}}
+                </div>
+            </div>
+				<div style="clear:both;"></div>			
+			</div>
+			<div class="comment-content">
+            {{cv.content}}
+            {% if session['logged_in'] and session['access'] == 1 %}
+            <button type="button" class="btn btn-primary" ><a href="{{url_for('edit' ,cvid = cv.cvid)}}">ویرایش</a>></button>
+            {%endif%}
+            {% if session['logged_in'] and session['access'] == 1 or session['access']==2 %}
+            <button type="button" class="btn btn-primary" ><a href="{{url_for('static' ,filename = 'uploads/'+ cv.document)}}">مستند رزومه</a>></button>
+            {%endif%}
+            {%for com in comment%}
+            <div class= "messenger-bulle">
+                <h2>{{com.user.username}}</h2>
+                {{com.content}}
+            </div>
+            {%endfor%}
+            <div  class="box">
+                    
+                    <label><h3>کامنت</h3></label>
+                    <div class="add-comment-text">
+                    <form method="POST"action="{{url_for('addcomment', cvid = cv.cvid)}}">
+                        <textarea name = "comment"rows="5" class="example-textarea"></textarea>
+                        <button type="submit" class="btn btn-primary" >بیشتر</button>
+                    </form>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+			
+			
+			
+        </div>
+        </div>
+		
+		
+    </div>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</body>
+</html>
+{% endblock %}

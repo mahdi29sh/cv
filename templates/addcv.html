@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!--===============================================================================================-->
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/main.css')}}">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="container">
+		<form action="{{url_for('addcv')}}" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="education">تحصیلات:</label>
+                <textarea class="form-control" rows="5" id="education"name = "education" required
+                data-bv-notempty-message="The username is required" ></textarea>
+            </div>
+            <div class="form-group">
+                <label for="content">content:</label>
+                <textarea class="form-control" rows="5" id="content" name = "content" required
+                data-bv-notempty-message="The username is required" ></textarea>
+            </div>
+            <div class="form-group">
+                <label for="img">عکس:</label>
+                <input type = "file" rows="5" id="img" name = "img"/>
+            </div>
+            <div class="form-group">
+                <label for="doc">مستندات:</label>
+                <input type = "file" rows="5" id="doc" name="doc"/>
+            </div>
+            {% if error %}
+				{{ error }}
+			{% endif %}
+            <div >
+                    <div class="container-login100-form-btn">
+                            <button type="submit" class="login100-form-btn" >
+                                <h2>ایجاد رزومه</h2>
+                            </button>
+                        </div>
+            </div>
+
+
+        </form>
+	</div>
+	
+
+</body>
+</html>
